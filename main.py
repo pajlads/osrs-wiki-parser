@@ -2,15 +2,15 @@
 # this will print a list of quests in release date order
 # the idea is for this to be expanded to other quest orders
 
+import datetime
+import re
+import sys
 from dataclasses import dataclass
 from functools import cmp_to_key
-from typing import Optional
 from operator import attrgetter
-
-import datetime
+from typing import Optional
 
 from bs4 import BeautifulSoup, NavigableString, Tag
-import re
 
 UNIMPLEMENTED_QUESTS = ("The Frozen Door", "Into the Tombs")
 
@@ -261,16 +261,51 @@ def print_quest_order_by_release_date(
     print(body.strip().rstrip(","))
 
 
-def main() -> None:
+def load_quest_list() -> tuple[list[Quest], list[Quest], list[Quest]]:
     with open("data/quest-list.html", "r") as fh:
         html = "".join(fh.readlines())
     data = BeautifulSoup(html, "html.parser")
 
-    f2pQuests = get_quests(data.find(find_wiki_table("Free-to-play quests")))
-    membersQuests = get_quests(data.find(find_wiki_table("Members' Quests")))
-    miniQuests = get_quests(data.find(find_wiki_table("Miniquests")))
+    f2p_quests = get_quests(data.find(find_wiki_table("Free-to-play quests")))
+    members_quests = get_quests(data.find(find_wiki_table("Members' Quests")))
+    mini_quests = get_quests(data.find(find_wiki_table("Miniquests")))
 
-    print_quest_order_by_release_date(f2pQuests, membersQuests, miniQuests)
+    return (f2p_quests, members_quests, mini_quests)
+
+
+def main() -> None:
+    COMMANDS = [
+        "quests-by-release-date",
+    ]
+
+    command = "quests-by-release-date"
+    if len(sys.argv) >= 2:
+        command = sys.argv[1]
+
+    f2p_quests, members_quests, mini_quests = load_quest_list()
+
+    match command:
+        case "quests-by-release-date":
+            SUBCOMMANDS = [
+                "enum",
+            ]
+            subcommand = "enum"
+            if len(sys.argv) >= 3:
+                subcommand = sys.argv[2]
+
+            match subcommand:
+                case "enum":
+                    print_quest_order_by_release_date(
+                        f2p_quests, members_quests, mini_quests
+                    )
+                case other:
+                    print(
+                        f"Unknown subcommand '{other}'. Available subcommands: {', '.join(SUBCOMMANDS)}"
+                    )
+        case other:
+            print(
+                f"Unknown command '{other}'. Available commands: {', '.join(COMMANDS)}"
+            )
 
 
 if __name__ == "__main__":
