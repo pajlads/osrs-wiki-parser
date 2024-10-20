@@ -66,7 +66,7 @@ def find_wiki_table(name: str):
         section = tag.find_previous("span", attrs={"class": "mw-headline"})
         if section is None:
             return False
-        return section.text.lower() == name.lower()
+        return section.text.strip().lower() == name.lower()
 
     return is_wiki_table
 
