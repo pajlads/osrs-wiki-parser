@@ -10,6 +10,10 @@ FILES = [
         "https://oldschool.runescape.wiki/w/Quests/List",
         "data/quest-list.html",
     ),
+    (
+        "https://oldschool.runescape.wiki/w/Optimal_quest_guide/Ironman",
+        "data/ironman-optimal-quest-guide.html",
+    ),
 ]
 
 USER_AGENT = "hi I'm pajlada on Discord, just doing some stuff for quest helper"

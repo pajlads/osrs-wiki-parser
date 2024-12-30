@@ -15,12 +15,20 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 UNIMPLEMENTED_QUESTS = ("The Frozen Door", "Into the Tombs")
 
 QUEST_HELPER_CUSTOM_ORDER = [
+    "Balloon transport system to Crafting Guild",
+    "Balloon transport system to Grand Tree",
+    "Balloon transport system to Varrock",
+    "Balloon transport system to Castle Wars",
+    "In Search of Knowledge",  # For the ironman order
+    "Hopespear's Will",  # For the ironman order
     "Barbarian Training",
     "Bear Your Soul",
     "The Enchanted Key",
     "Family Pest",
     "Mage Arena I",
     "Mage Arena II",
+    "All Easy Achievement Diaries",
+    "All Medium Achievement Diaries",
     "All Hard Achievement Diaries",
     "All Elite Achievement Diaries",
 ]
@@ -42,12 +50,13 @@ def clean_quest_name(quest_name: str) -> str:
         .replace(".", "")
         .replace("!", "")
         .replace("-", "")
+        .replace("Unlock: ", "")
     )
 
 
 def find_wiki_table(name: str):
     def is_wiki_table(tag: Tag) -> bool:
-        MIN_HEADERS = ["quest/activity", "release date"]
+        MIN_HEADERS = ["quest/action", "quest/activity", "release date"]
         # print(f"Tag: {tag}")
         if tag.name != "table":
             return False
@@ -109,11 +118,190 @@ class Quest:
 
     release_date: datetime.datetime
 
-    optimal_order: int
+    optimal_order: int = -1
 
-    optimal_ironman_order: int
+    optimal_ironman_order: int = -1
 
-    qh_order: int
+    qh_order: int = -1
+
+    # Can be used to sort quests that have the same number in the above-set order list
+    sub_order: int = 100
+
+    # Can be used to sort quests that have the same number in the above-set order list
+    ironman_sub_order: int = 100
+
+    diary_difficulty: str = ""
+    diary_region: str = ""
+
+    def load_order(
+        self,
+        optimal_quest_order: list[str],
+        ironman_optimal_quest_order: list[str],
+        custom_name: Optional[str] = None,
+    ):
+        name = custom_name or self.name
+
+        if self.qh_order == -1:
+            try:
+                self.qh_order = QUEST_HELPER_CUSTOM_ORDER.index(name)
+            except ValueError:
+                pass
+
+        if self.optimal_order == -1:
+            try:
+                self.optimal_order = optimal_quest_order.index(name)
+            except ValueError:
+                pass
+
+        if self.optimal_ironman_order == -1:
+            try:
+                self.optimal_ironman_order = ironman_optimal_quest_order.index(name)
+            except ValueError:
+                pass
+
+        if custom_name is None:
+            if self.quest_type == QuestType.ACHIEVEMENT_DIARY:
+                match self.diary_region:
+                    case "Lumbridge":
+                        # to handle
+                        self.load_order(
+                            optimal_quest_order,
+                            ironman_optimal_quest_order,
+                            f"{self.diary_difficulty} Lumbridge & Draynor Diary",
+                        )
+
+                self.load_order(
+                    optimal_quest_order,
+                    ironman_optimal_quest_order,
+                    f"All {self.diary_difficulty} Achievement Diaries",
+                )
+
+            # Some quest names in the ironman guide are weird, try to handle them here
+            match name:
+                case "Recipe for Disaster/Another Cook's Quest":
+                    self.load_order(
+                        optimal_quest_order,
+                        ironman_optimal_quest_order,
+                        "Recipe for Disaster: Another Cook's quest",
+                    )
+                case "Recipe for Disaster/Freeing the Goblin generals":
+                    self.load_order(
+                        optimal_quest_order,
+                        ironman_optimal_quest_order,
+                        "Recipe for Disaster: Goblin generals",
+                    )
+                case "Recipe for Disaster/Freeing the Mountain Dwarf":
+                    self.load_order(
+                        optimal_quest_order,
+                        ironman_optimal_quest_order,
+                        "Recipe for Disaster: Dwarf",
+                    )
+                case "Recipe for Disaster/Freeing Evil Dave":
+                    self.load_order(
+                        optimal_quest_order,
+                        ironman_optimal_quest_order,
+                        "Recipe for Disaster: Evil Dave",
+                    )
+                case "Recipe for Disaster/Freeing Pirate Pete":
+                    self.load_order(
+                        optimal_quest_order,
+                        ironman_optimal_quest_order,
+                        "Recipe for Disaster: Pirate Pete",
+                    )
+                case "Recipe for Disaster/Freeing the Lumbridge Guide":
+                    self.load_order(
+                        optimal_quest_order,
+                        ironman_optimal_quest_order,
+                        "Recipe for Disaster: Lumbridge Guide",
+                    )
+                case "Recipe for Disaster/Freeing Skrach Uglogwee":
+                    self.load_order(
+                        optimal_quest_order,
+                        ironman_optimal_quest_order,
+                        "Recipe for Disaster: Skrach Uglogwee",
+                    )
+                case "Recipe for Disaster/Freeing Sir Amik Varze":
+                    self.load_order(
+                        optimal_quest_order,
+                        ironman_optimal_quest_order,
+                        "Recipe for Disaster: Sir Amik Varze",
+                    )
+                case "Recipe for Disaster/Freeing King Awowogei":
+                    self.load_order(
+                        optimal_quest_order,
+                        ironman_optimal_quest_order,
+                        "Recipe for Disaster: Awowogei",
+                    )
+                case "Recipe for Disaster/Defeating the Culinaromancer":
+                    self.load_order(
+                        optimal_quest_order,
+                        ironman_optimal_quest_order,
+                        "Recipe for Disaster: Defeating the Culinaromancer",
+                    )
+                case "Stronghold of Security":
+                    # Stronghold of Security is not explicitly part of the ironman wiki order
+                    # It's mentioned during the Romeo & Juliet step, so we put it under it
+                    if self.optimal_ironman_order == -1:
+                        self.optimal_ironman_order = ironman_optimal_quest_order.index(
+                            "Romeo & Juliet"
+                        )
+                        self.ironman_sub_order = 110
+                case "Meat and Greet":
+                    # Meat and Greet is not explicitly part of the ironman wiki order
+                    # We put it under Cabin Fever which is the same order it has in the normal wiki order
+                    if self.optimal_ironman_order == -1:
+                        self.optimal_ironman_order = ironman_optimal_quest_order.index(
+                            "Cabin Fever"
+                        )
+                        self.ironman_sub_order = 110
+                case "Death on the Isle":
+                    # Death on the Isle is not explicitly part of the ironman wiki order
+                    # We put it under The Feud which is the same order it has in the normal wiki order
+                    if self.optimal_ironman_order == -1:
+                        self.optimal_ironman_order = ironman_optimal_quest_order.index(
+                            "The Feud"
+                        )
+                        self.ironman_sub_order = 110
+                case "His Faithful Servants":
+                    # His Faithful Servants is not explicitly part of the ironman wiki order
+                    # We put it under The General's Shadow which is the same order it has in the normal wiki order
+                    if self.optimal_ironman_order == -1:
+                        self.optimal_ironman_order = ironman_optimal_quest_order.index(
+                            "The General's Shadow"
+                        )
+                        self.ironman_sub_order = 110
+                case "Ethically Acquired Antiquities":
+                    # Ethically Acquired Antiquities is not explicitly part of the ironman wiki order
+                    # We put it under Monkey Madness I which is the same order it has in the normal wiki order
+                    if self.optimal_ironman_order == -1:
+                        self.optimal_ironman_order = ironman_optimal_quest_order.index(
+                            "Monkey Madness I"
+                        )
+                        self.ironman_sub_order = 110
+                case "The Curse of Arrav":
+                    # The Curse of Arrav is not explicitly part of the ironman wiki order
+                    # We put it under Dragon Slayer II which is the same order it has in the normal wiki order
+                    if self.optimal_ironman_order == -1:
+                        self.optimal_ironman_order = ironman_optimal_quest_order.index(
+                            "Dragon Slayer II"
+                        )
+                        self.ironman_sub_order = 110
+                case "In Search of Knowledge":
+                    # In Search of Knowledge is not explicitly part of the ironman wiki order
+                    # We put it under Sins of the Father which is the same order it has in the normal wiki order
+                    if self.optimal_ironman_order == -1:
+                        self.optimal_ironman_order = ironman_optimal_quest_order.index(
+                            "The Corsair Curse"
+                        )
+                        self.ironman_sub_order = 110
+                case "Hopespear's Will":
+                    # Hopespear's Will is not explicitly part of the ironman wiki order
+                    # We put it under In Search of Knowledge which is the same order it has in the normal wiki order
+                    if self.optimal_ironman_order == -1:
+                        self.optimal_ironman_order = ironman_optimal_quest_order.index(
+                            "The Corsair Curse"
+                        )
+                        self.ironman_sub_order = 120
 
     def quest_helper_enum_values(self) -> list[str]:
         if self.name in UNIMPLEMENTED_QUESTS:
@@ -248,6 +436,7 @@ def get_quests(
     quest_table: Tag | NavigableString | None,
     quest_type: QuestType,
     optimal_quest_order: list[str],
+    ironman_optimal_quest_order: list[str],
 ) -> list[Quest]:
     assert isinstance(quest_table, Tag)
 
@@ -296,47 +485,32 @@ def get_quests(
             quest_data["release date"], "%d %B %Y"
         )
 
-        try:
-            optimal_order = optimal_quest_order.index(quest_name)
-        except ValueError:
-            optimal_order = -1
-
-        optimal_ironman_order = -1
-
-        try:
-            qh_order = QUEST_HELPER_CUSTOM_ORDER.index(quest_name)
-        except ValueError:
-            qh_order = -1
-
-        quests.append(
-            Quest(
-                quest_type,
-                number,
-                subnumber,
-                quest_name,
-                quest_data["difficulty"],
-                quest_data["length"],
-                quest_points,
-                series,
-                release_date,
-                optimal_order,
-                optimal_ironman_order,
-                qh_order,
-            )
+        q = Quest(
+            quest_type,
+            number,
+            subnumber,
+            quest_name,
+            quest_data["difficulty"],
+            quest_data["length"],
+            quest_points,
+            series,
+            release_date,
         )
+
+        q.load_order(optimal_quest_order, ironman_optimal_quest_order)
+
+        quests.append(q)
 
     return quests
 
 
 def custom_quest(
-    name: str, release_date: datetime.datetime, optimal_quest_order: list[str]
+    name: str,
+    release_date: datetime.datetime,
+    optimal_quest_order: list[str],
+    ironman_optimal_quest_order: list[str],
 ) -> Quest:
-    try:
-        qh_order = QUEST_HELPER_CUSTOM_ORDER.index(name)
-    except ValueError:
-        qh_order = -1
-
-    return Quest(
+    q = Quest(
         QuestType.CUSTOM_QUEST,
         None,
         None,
@@ -346,21 +520,20 @@ def custom_quest(
         0,
         None,
         release_date,
-        optimal_quest_order.index(name),
-        -1,
-        qh_order,
     )
+
+    q.load_order(optimal_quest_order, ironman_optimal_quest_order)
+
+    return q
 
 
 def balloon_unlock(
-    name: str, release_date: datetime.datetime, optimal_quest_order: list[str]
+    name: str,
+    release_date: datetime.datetime,
+    optimal_quest_order: list[str],
+    ironman_optimal_quest_order: list[str],
 ) -> Quest:
-    try:
-        qh_order = QUEST_HELPER_CUSTOM_ORDER.index(name)
-    except ValueError:
-        qh_order = -1
-
-    return Quest(
+    q = Quest(
         QuestType.BALLOON_UNLOCK,
         None,
         None,
@@ -370,33 +543,23 @@ def balloon_unlock(
         0,
         None,
         release_date,
-        optimal_quest_order.index(name),
-        -1,
-        qh_order,
     )
+
+    q.load_order(optimal_quest_order, ironman_optimal_quest_order)
+
+    return q
 
 
 def diary(
-    name: str, release_date: datetime.datetime, optimal_quest_order: list[str]
+    difficulty: str,
+    region: str,
+    release_date: datetime.datetime,
+    optimal_quest_order: list[str],
+    ironman_optimal_quest_order: list[str],
 ) -> Quest:
-    try:
-        qh_order = QUEST_HELPER_CUSTOM_ORDER.index(name)
-    except ValueError:
-        if "Hard" in name:
-            qh_order = QUEST_HELPER_CUSTOM_ORDER.index("All Hard Achievement Diaries")
-        elif "Elite" in name:
-            qh_order = QUEST_HELPER_CUSTOM_ORDER.index("All Elite Achievement Diaries")
-        else:
-            qh_order = -1
+    name = f"{difficulty} {region} Diary"
 
-    if name in optimal_quest_order:
-        optimal_order = optimal_quest_order.index(name)
-    else:
-        if "Easy" in name:
-            optimal_order = optimal_quest_order.index("All Easy Achievement Diaries")
-        else:
-            optimal_order = -1
-    return Quest(
+    q = Quest(
         QuestType.ACHIEVEMENT_DIARY,
         None,
         None,
@@ -406,14 +569,18 @@ def diary(
         0,
         None,
         release_date,
-        optimal_order,
-        -1,
-        qh_order,
+        diary_region=region,
+        diary_difficulty=difficulty,
     )
+
+    q.load_order(optimal_quest_order, ironman_optimal_quest_order)
+
+    return q
 
 
 def load_quest_list(
     optimal_quest_order: list[str],
+    ironman_optimal_quest_order: list[str],
 ) -> list[Quest]:
     with open("data/quest-list.html", "r") as fh:
         html = "".join(fh.readlines())
@@ -437,54 +604,71 @@ def load_quest_list(
 
     custom_quests = [
         custom_quest(
-            "Stronghold of Security", datetime.datetime(2006, 7, 4), optimal_quest_order
+            "Stronghold of Security",
+            datetime.datetime(2006, 7, 4),
+            optimal_quest_order,
+            ironman_optimal_quest_order,
         ),
         custom_quest(
             "Knight Waves Training Grounds",
             datetime.datetime(2007, 7, 24),
             optimal_quest_order,
+            ironman_optimal_quest_order,
         ),
         balloon_unlock(
             "Balloon transport system to Crafting Guild",
             datetime.datetime(2006, 11, 6),
             optimal_quest_order,
+            ironman_optimal_quest_order,
         ),
         balloon_unlock(
             "Balloon transport system to Varrock",
             datetime.datetime(2006, 11, 6),
             optimal_quest_order,
+            ironman_optimal_quest_order,
         ),
         balloon_unlock(
             "Balloon transport system to Castle Wars",
             datetime.datetime(2006, 11, 6),
             optimal_quest_order,
+            ironman_optimal_quest_order,
         ),
         balloon_unlock(
             "Balloon transport system to Grand Tree",
             datetime.datetime(2006, 11, 6),
             optimal_quest_order,
+            ironman_optimal_quest_order,
         ),
     ]
     for difficulty in DIARY_DIFFICULTIES:
         for region, release_date in DIARIES:
             custom_quests.append(
-                diary(f"{difficulty} {region} Diary", release_date, optimal_quest_order)
+                diary(
+                    difficulty,
+                    region,
+                    release_date,
+                    optimal_quest_order,
+                    ironman_optimal_quest_order,
+                )
             )
 
     f2p_quests = get_quests(
         data.find(find_wiki_table("Free-to-play quests")),
         QuestType.FREE_TO_PLAY_QUEST,
         optimal_quest_order,
+        ironman_optimal_quest_order,
     )
     members_quests = get_quests(
         data.find(find_wiki_table("Members' Quests")),
         QuestType.MEMBERS_QUEST,
         optimal_quest_order,
+        ironman_optimal_quest_order,
     )
     mini_quests = get_quests(
         data.find(find_wiki_table("Miniquests")),
         QuestType.MINI_QUEST,
         optimal_quest_order,
+        ironman_optimal_quest_order,
     )
 
     return custom_quests + f2p_quests + members_quests + mini_quests
@@ -519,6 +703,43 @@ def load_optimal_quest_order() -> list[str]:
 
         quests.append(
             quest_data["quest/activity"]
+            .replace("Unlock:", "")
+            .replace("(miniquest)", "")
+            .strip()
+        )
+
+    return quests
+
+
+def load_ironman_optimal_quest_order() -> list[str]:
+    with open("data/ironman-optimal-quest-guide.html", "r") as fh:
+        html = "".join(fh.readlines())
+    data = BeautifulSoup(html, "html.parser")
+
+    quest_table = data.find(find_wiki_table("Quests"))
+    assert isinstance(quest_table, Tag)
+
+    quests: list[str] = []
+
+    headers = [tag.text.strip().lower() for tag in quest_table.find_all("th")]
+    for row in quest_table.find_all("tr"):
+        assert isinstance(row, Tag)
+
+        data = row.find_all("td")
+        if not data:
+            # skip header / empty rows
+            continue
+
+        quest_data = {}
+        for i in range(0, len(data)):
+            quest_data[headers[i]] = re.sub(
+                r" +", " ", data[i].text.strip().replace("\n", "")
+            )
+
+        assert "quest/action" in quest_data
+
+        quests.append(
+            quest_data["quest/action"]
             .replace("Unlock:", "")
             .replace("(miniquest)", "")
             .strip()
@@ -572,7 +793,7 @@ def print_quests_enum_by_optimal_order(quests: list[Quest]) -> None:
 
     for quest in filter(
         lambda q: q.optimal_order > -1,
-        sorted(quests, key=attrgetter("optimal_order")),
+        sorted(quests, key=attrgetter("optimal_order", "sub_order")),
     ):
         quest_enums = quest.quest_helper_enum_values()
         for s in quest_enums:
@@ -602,6 +823,43 @@ def print_quests_enum_by_optimal_order(quests: list[Quest]) -> None:
     print(body.strip().rstrip(","))
 
 
+def print_quests_enum_by_ironman_optimal_order(quests: list[Quest]) -> None:
+    body = ""
+
+    for quest in filter(
+        lambda q: q.optimal_ironman_order > -1,
+        sorted(quests, key=attrgetter("optimal_ironman_order", "ironman_sub_order")),
+    ):
+        quest_enums = quest.quest_helper_enum_values()
+        for s in quest_enums:
+            if s.strip().startswith("//"):
+                body += f"\t\t{s}\n"
+            else:
+                body += f"\t\t{s},\n"
+
+            # body += f"\t\t// {quest.optimal_ironman_order} | {quest.qh_order} ({quest.name}),\n"
+
+    unordered_quests = list(
+        filter(
+            lambda q: q.optimal_ironman_order == -1,
+            sorted(quests, key=attrgetter("qh_order", "name")),
+        )
+    )
+    if len(unordered_quests) > 0:
+        body += "\t\t// Quests & mini quests that are not part of the OSRS Wiki's Optimal Ironman Quest Guide\n"
+
+        for quest in unordered_quests:
+            quest_enums = quest.quest_helper_enum_values()
+            for s in quest_enums:
+                if s.strip().startswith("//"):
+                    continue
+                else:
+                    body += f"\t\t{s},\n"
+                    # body += f"\t\t// {quest.qh_order} ({quest.name}),\n"
+
+    print(body.strip().rstrip(","))
+
+
 def main() -> None:
     COMMANDS = [
         "quests-by-release-date",
@@ -613,7 +871,8 @@ def main() -> None:
         command = sys.argv[1]
 
     optimal_quest_order = load_optimal_quest_order()
-    quests = load_quest_list(optimal_quest_order)
+    ironman_optimal_quest_order = load_ironman_optimal_quest_order()
+    quests = load_quest_list(optimal_quest_order, ironman_optimal_quest_order)
 
     match command:
         case "quests-by-release-date":
@@ -643,6 +902,22 @@ def main() -> None:
             match subcommand:
                 case "enum":
                     print_quests_enum_by_optimal_order(quests)
+                case other:
+                    print(
+                        f"Unknown subcommand '{other}'. Available subcommands: {', '.join(SUBCOMMANDS)}"
+                    )
+
+        case "ironman-quests-by-optimal-order":
+            SUBCOMMANDS = [
+                "enum",
+            ]
+            subcommand = "enum"
+            if len(sys.argv) >= 3:
+                subcommand = sys.argv[2]
+
+            match subcommand:
+                case "enum":
+                    print_quests_enum_by_ironman_optimal_order(quests)
                 case other:
                     print(
                         f"Unknown subcommand '{other}'. Available subcommands: {', '.join(SUBCOMMANDS)}"
