@@ -17,7 +17,7 @@ UNIMPLEMENTED_QUESTS = ("The Frozen Door", "Into the Tombs")
 QUEST_HELPER_CUSTOM_ORDER = [
     "Barbarian Training",
     "Bear Your Soul",
-    "Enchanted Key",
+    "The Enchanted Key",
     "Family Pest",
     "Mage Arena I",
     "Mage Arena II",
@@ -597,6 +597,7 @@ def print_quests_enum_by_optimal_order(quests: list[Quest]) -> None:
                     continue
                 else:
                     body += f"\t\t{s},\n"
+                    # body += f"\t\t// {quest.qh_order} ({quest.name}),\n"
 
     print(body.strip().rstrip(","))
 
