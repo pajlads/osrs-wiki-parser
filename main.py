@@ -864,6 +864,7 @@ def main() -> None:
     COMMANDS = [
         "quests-by-release-date",
         "quests-by-optimal-order",
+        "ironman-quests-by-optimal-order",
     ]
 
     command = "quests-by-release-date"

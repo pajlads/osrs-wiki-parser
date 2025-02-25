@@ -10,14 +10,20 @@ This project is intended to be used with the RuneLite Quest Helper plugin, to en
 uv run data/update.py
 ```
 
+### Get quest list ordered by OSRS wiki's Optimal quest guide
+
+```python3
+uv run main.py quests-by-optimal-order
+```
+
+### Get quest list ordered by OSRS wiki's Optimal Ironman quest guide
+
+```python3
+uv run main.py ironman-quests-by-optimal-order
+```
+
 ### Get quest list by release date
 
 ```python3
 uv run main.py quests-by-release-date
-```
-
-### Get quest list ordered by OSRS wiki's Optimal Quest Guide
-
-```python3
-uv run main.py quests-by-optimal-guide
 ```
