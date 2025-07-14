@@ -716,7 +716,7 @@ def load_ironman_optimal_quest_order() -> list[str]:
         html = "".join(fh.readlines())
     data = BeautifulSoup(html, "html.parser")
 
-    quest_table = data.find(find_wiki_table("Quests"))
+    quest_table = data.find(find_wiki_table("Questing Order"))
     assert isinstance(quest_table, Tag)
 
     quests: list[str] = []
