@@ -311,7 +311,7 @@ class Quest:
 
         if self.quest_type == QuestType.BALLOON_UNLOCK:
             return [
-                f"QuestHelperQuest.{clean_quest_name(self.name.replace("system to ", ""))}",
+                f"QuestHelperQuest.{clean_quest_name(self.name.replace('system to ', ''))}",
             ]
 
         if self.quest_type == QuestType.ACHIEVEMENT_DIARY:
@@ -319,19 +319,19 @@ class Quest:
 
             if "Easy" in self.name:
                 return [
-                    f"QuestHelperQuest.{clean_quest_name(self.name.replace("Easy ", ""))}_EASY",
+                    f"QuestHelperQuest.{clean_quest_name(self.name.replace('Easy ', ''))}_EASY",
                 ]
             elif "Medium" in self.name:
                 return [
-                    f"QuestHelperQuest.{clean_quest_name(self.name.replace("Medium ", ""))}_MEDIUM",
+                    f"QuestHelperQuest.{clean_quest_name(self.name.replace('Medium ', ''))}_MEDIUM",
                 ]
             elif "Hard" in self.name:
                 return [
-                    f"QuestHelperQuest.{clean_quest_name(self.name.replace("Hard ", ""))}_HARD",
+                    f"QuestHelperQuest.{clean_quest_name(self.name.replace('Hard ', ''))}_HARD",
                 ]
             elif "Elite" in self.name:
                 return [
-                    f"QuestHelperQuest.{clean_quest_name(self.name.replace("Elite ", ""))}_ELITE",
+                    f"QuestHelperQuest.{clean_quest_name(self.name.replace('Elite ', ''))}_ELITE",
                 ]
             else:
                 assert f"unhandled achievement diary difficulty for {self.name}"
