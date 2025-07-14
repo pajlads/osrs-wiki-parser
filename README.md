@@ -27,3 +27,9 @@ uv run main.py ironman-quests-by-optimal-order
 ```python3
 uv run main.py quests-by-release-date
 ```
+
+### Print quest JSON
+
+```python3
+uv run main.py quests
+```

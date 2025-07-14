@@ -7,8 +7,9 @@ from enum import Enum
 from operator import attrgetter
 import re
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict, is_dataclass
 from typing import Optional
+import json
 
 from bs4 import BeautifulSoup, NavigableString, Tag
 
@@ -32,6 +33,17 @@ QUEST_HELPER_CUSTOM_ORDER = [
     "All Hard Achievement Diaries",
     "All Elite Achievement Diaries",
 ]
+
+
+class DCJSONEncoder(json.JSONEncoder):
+    def default(self, o):
+        if is_dataclass(o):
+            return asdict(o)
+
+        if isinstance(o, datetime.datetime):
+            return o.isoformat()
+
+        return super().default(o)
 
 
 def clean_quest_name(quest_name: str) -> str:
@@ -80,7 +92,7 @@ def find_wiki_table(name: str):
     return is_wiki_table
 
 
-class QuestType(Enum):
+class QuestType(int, Enum):
     FREE_TO_PLAY_QUEST = 1
     MEMBERS_QUEST = 2
     MINI_QUEST = 3
@@ -865,6 +877,7 @@ def main() -> None:
         "quests-by-release-date",
         "quests-by-optimal-order",
         "ironman-quests-by-optimal-order",
+        "quests",
     ]
 
     command = "quests-by-release-date"
@@ -923,6 +936,9 @@ def main() -> None:
                     print(
                         f"Unknown subcommand '{other}'. Available subcommands: {', '.join(SUBCOMMANDS)}"
                     )
+
+        case "quests":
+            print(json.dumps(quests, cls=DCJSONEncoder))
 
         case other:
             print(
