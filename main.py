@@ -56,6 +56,7 @@ def clean_quest_name(quest_name: str) -> str:
             "WESTERN PROVINCES", "WESTERN"
         )  # for achievement diaries, should be removed
         .replace(" DIARY", "")  # for achievement diaries, should be removed
+        .replace(" (MINIQUEST)", "")
         .replace(" ", "_")
         .replace("'", "")
         .replace("&", "")
