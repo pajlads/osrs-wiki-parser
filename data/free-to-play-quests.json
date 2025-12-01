@@ -1,0 +1,233 @@
+[
+    {
+        "number": 178,
+        "name": "The Ides of Milk",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2026-02-25"
+    },
+    {
+        "number": 0,
+        "name": "Learning the Ropes",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2025-10-22"
+    },
+    {
+        "number": 148,
+        "name": "Below Ice Mountain",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2021-04-14"
+    },
+    {
+        "number": 142,
+        "name": "X Marks the Spot",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Great Kourend",
+            "number": "1"
+        },
+        "release_date": "2019-02-07"
+    },
+    {
+        "number": 135,
+        "name": "The Corsair Curse",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2017-12-07"
+    },
+    {
+        "number": 129,
+        "name": "Misthalin Mystery",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2017-01-26"
+    },
+    {
+        "number": 51,
+        "name": "Rune Mysteries",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Order of Wizards",
+            "number": "1"
+        },
+        "release_date": "2004-03-29"
+    },
+    {
+        "number": 17,
+        "name": "Dragon Slayer I",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Dragonkin",
+            "number": "1"
+        },
+        "release_date": "2001-09-23"
+    },
+    {
+        "number": 16,
+        "name": "Pirate's Treasure",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2001-06-11"
+    },
+    {
+        "number": 15,
+        "name": "Goblin Diplomacy",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 5,
+        "series": null,
+        "release_date": "2001-05-08"
+    },
+    {
+        "number": 14,
+        "name": "The Knight's Sword",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2001-04-06"
+    },
+    {
+        "number": 13,
+        "name": "Witch's Potion",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2001-04-06"
+    },
+    {
+        "number": 12,
+        "name": "Black Knights' Fortress",
+        "difficulty": "Intermediate",
+        "length": "Very Short",
+        "quest_points": 3,
+        "series": null,
+        "release_date": "2001-04-06"
+    },
+    {
+        "number": 11,
+        "name": "Doric's Quest",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2001-04-06"
+    },
+    {
+        "number": 10,
+        "name": "Prince Ali Rescue",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 3,
+        "series": {
+            "name": "Kharidian",
+            "number": "1"
+        },
+        "release_date": "2001-02-28"
+    },
+    {
+        "number": 9,
+        "name": "Imp Catcher",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2001-02-16"
+    },
+    {
+        "number": 8,
+        "name": "Vampyre Slayer",
+        "difficulty": "Intermediate",
+        "length": "Very Short",
+        "quest_points": 3,
+        "series": null,
+        "release_date": "2001-01-28"
+    },
+    {
+        "number": 7,
+        "name": "Ernest the Chicken",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 4,
+        "series": null,
+        "release_date": "2001-01-21"
+    },
+    {
+        "number": 3,
+        "name": "The Restless Ghost",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2001-01-04"
+    },
+    {
+        "number": 5,
+        "name": "Sheep Shearer",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2001-01-04"
+    },
+    {
+        "number": 6,
+        "name": "Shield of Arrav",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2001-01-04"
+    },
+    {
+        "number": 2,
+        "name": "Demon Slayer",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 3,
+        "series": {
+            "name": "Demon Slayer",
+            "number": "1"
+        },
+        "release_date": "2001-01-04"
+    },
+    {
+        "number": 4,
+        "name": "Romeo & Juliet",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 5,
+        "series": null,
+        "release_date": "2001-01-04"
+    },
+    {
+        "number": 1,
+        "name": "Cook's Assistant",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2001-01-04"
+    }
+]

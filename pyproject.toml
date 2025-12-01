@@ -1,7 +1,8 @@
 [project]
-name = "quest-parser"
+name = "osrs-wiki-parser"
 version = "0.1.0"
-description = "Add your description here"
+description = "parse the OSRS wiki into formats usable by the quest helper plugin"
+license = "MIT"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

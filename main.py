@@ -5,15 +5,24 @@
 import datetime
 from enum import Enum
 from operator import attrgetter
-import re
 import sys
 from dataclasses import dataclass, asdict, is_dataclass
 from typing import Optional
 import json
+import logging
 
-from bs4 import BeautifulSoup, NavigableString, Tag
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(levelname)s:%(message)s",
+)
+log = logging.getLogger(__name__)
 
-UNIMPLEMENTED_QUESTS = ("The Frozen Door", "Into the Tombs")
+UNIMPLEMENTED_QUESTS = (
+    "The Frozen Door",
+    "Into the Tombs",
+)
+
+UNIMPLEMENTED_BUT_NO_INTENTION_TO_ADD_QUESTS = ("Learning the Ropes",)
 
 QUEST_HELPER_CUSTOM_ORDER = [
     "Balloon transport system to Crafting Guild",
@@ -65,32 +74,6 @@ def clean_quest_name(quest_name: str) -> str:
         .replace("-", "")
         .replace("Unlock: ", "")
     )
-
-
-def find_wiki_table(name: str):
-    def is_wiki_table(tag: Tag) -> bool:
-        MIN_HEADERS = ["quest/action", "quest/activity", "release date"]
-        # print(f"Tag: {tag}")
-        if tag.name != "table":
-            return False
-        if "wikitable" not in tag.attrs["class"]:
-            return False
-        headers = [tag.text.strip().lower() for tag in tag.find_all("th")]
-        matches = 0
-        for header in MIN_HEADERS:
-            if header in headers:
-                matches += 1
-
-        if matches == 0:
-            return False
-        # if "name" not in headers or "release date" not in headers:
-        #     return False
-        section = tag.find_previous("span", attrs={"class": "mw-headline"})
-        if section is None:
-            return False
-        return section.text.strip().lower() == name.lower()
-
-    return is_wiki_table
 
 
 class QuestType(int, Enum):
@@ -322,6 +305,11 @@ class Quest:
                 f"//QuestHelperQuest.{clean_quest_name(self.name)}, - Placeholder for future addition."
             ]
 
+        if self.name in UNIMPLEMENTED_BUT_NO_INTENTION_TO_ADD_QUESTS:
+            return [
+                f"//QuestHelperQuest.{clean_quest_name(self.name)}, - Quest we are unlikely to add a helper for."
+            ]
+
         if self.quest_type == QuestType.BALLOON_UNLOCK:
             return [
                 f"QuestHelperQuest.{clean_quest_name(self.name.replace('system to ', ''))}",
@@ -445,74 +433,38 @@ class Quest:
         return [f"QuestHelperQuest.{clean_quest_name(self.name)}"]
 
 
-def get_quests(
-    quest_table: Tag | NavigableString | None,
+def load_quests(
+    path: str,
     quest_type: QuestType,
     optimal_quest_order: list[str],
     ironman_optimal_quest_order: list[str],
 ) -> list[Quest]:
-    assert isinstance(quest_table, Tag)
-
     quests: list[Quest] = []
 
-    headers = [tag.text.strip().lower() for tag in quest_table.find_all("th")]
-    for row in quest_table.find_all("tr"):
-        assert isinstance(row, Tag)
-
-        data = row.find_all("td")
-        if not data:
-            # skip header / empty rows
-            continue
-
-        quest_data = {}
-        for i in range(0, len(data)):
-            quest_data[headers[i]] = re.sub(
-                r" +", " ", data[i].text.strip().replace("\n", "")
-            )
-
-        quest_name = quest_data["name"].strip()
-
-        series: Optional[str] = None
-        if "series" in quest_data:
-            series = quest_data["series"]
-            if series == "N/A":
-                series = None
-
-        number_str = quest_data.get("#", None)
-        number: Optional[int] = None
-        subnumber: Optional[int] = None
-        if number_str is not None:
-            if "." in number_str:
-                parts = number_str.split(".", 1)
+    with open(path, "r") as fh:
+        payload = json.loads(fh.read())
+        for p in payload:
+            number = p["number"]
+            subnumber = None
+            if isinstance(number, str):
+                parts = number.split(".", 1)
                 number = int(parts[0])
                 subnumber = int(parts[1])
-            else:
-                number = int(number_str)
 
-        quest_points = 0
-        if "" in quest_data:
-            # mini quests don't have quest points
-            quest_points = int(quest_data[""])
+            q = Quest(
+                quest_type,
+                number,
+                subnumber,
+                p["name"],
+                p["difficulty"],
+                p["length"],
+                p["quest_points"],
+                p["series"],
+                datetime.datetime.strptime(p["release_date"], "%Y-%m-%d"),
+            )
 
-        release_date = datetime.datetime.strptime(
-            quest_data["release date"], "%d %B %Y"
-        )
-
-        q = Quest(
-            quest_type,
-            number,
-            subnumber,
-            quest_name,
-            quest_data["difficulty"],
-            quest_data["length"],
-            quest_points,
-            series,
-            release_date,
-        )
-
-        q.load_order(optimal_quest_order, ironman_optimal_quest_order)
-
-        quests.append(q)
+            q.load_order(optimal_quest_order, ironman_optimal_quest_order)
+            quests.append(q)
 
     return quests
 
@@ -595,10 +547,6 @@ def load_quest_list(
     optimal_quest_order: list[str],
     ironman_optimal_quest_order: list[str],
 ) -> list[Quest]:
-    with open("data/quest-list.html", "r") as fh:
-        html = "".join(fh.readlines())
-    data = BeautifulSoup(html, "html.parser")
-
     DIARY_DIFFICULTIES = ["Easy", "Medium", "Hard", "Elite"]
     DIARIES = [
         ("Ardougne", datetime.datetime(2015, 3, 5)),
@@ -665,20 +613,20 @@ def load_quest_list(
                 )
             )
 
-    f2p_quests = get_quests(
-        data.find(find_wiki_table("Free-to-play quests")),
+    f2p_quests = load_quests(
+        "data/free-to-play-quests.json",
         QuestType.FREE_TO_PLAY_QUEST,
         optimal_quest_order,
         ironman_optimal_quest_order,
     )
-    members_quests = get_quests(
-        data.find(find_wiki_table("Members' Quests")),
+    members_quests = load_quests(
+        "data/members-quests.json",
         QuestType.MEMBERS_QUEST,
         optimal_quest_order,
         ironman_optimal_quest_order,
     )
-    mini_quests = get_quests(
-        data.find(find_wiki_table("Miniquests")),
+    mini_quests = load_quests(
+        "data/miniquests.json",
         QuestType.MINI_QUEST,
         optimal_quest_order,
         ironman_optimal_quest_order,
@@ -688,77 +636,13 @@ def load_quest_list(
 
 
 def load_optimal_quest_order() -> list[str]:
-    with open("data/optimal-quest-guide.html", "r") as fh:
-        html = "".join(fh.readlines())
-    data = BeautifulSoup(html, "html.parser")
-
-    quest_table = data.find(find_wiki_table("Quests"))
-    assert isinstance(quest_table, Tag)
-
-    quests: list[str] = []
-
-    headers = [tag.text.strip().lower() for tag in quest_table.find_all("th")]
-    for row in quest_table.find_all("tr"):
-        assert isinstance(row, Tag)
-
-        data = row.find_all("td")
-        if not data:
-            # skip header / empty rows
-            continue
-
-        quest_data = {}
-        for i in range(0, len(data)):
-            quest_data[headers[i]] = re.sub(
-                r" +", " ", data[i].text.strip().replace("\n", "")
-            )
-
-        assert "quest/activity" in quest_data
-
-        quests.append(
-            quest_data["quest/activity"]
-            .replace("Unlock:", "")
-            .replace("(miniquest)", "")
-            .strip()
-        )
-
-    return quests
+    with open("data/optimal-quest-guide.json", "r") as fh:
+        return json.load(fh)
 
 
 def load_ironman_optimal_quest_order() -> list[str]:
-    with open("data/ironman-optimal-quest-guide.html", "r") as fh:
-        html = "".join(fh.readlines())
-    data = BeautifulSoup(html, "html.parser")
-
-    quest_table = data.find(find_wiki_table("Questing Order"))
-    assert isinstance(quest_table, Tag)
-
-    quests: list[str] = []
-
-    headers = [tag.text.strip().lower() for tag in quest_table.find_all("th")]
-    for row in quest_table.find_all("tr"):
-        assert isinstance(row, Tag)
-
-        data = row.find_all("td")
-        if not data:
-            # skip header / empty rows
-            continue
-
-        quest_data = {}
-        for i in range(0, len(data)):
-            quest_data[headers[i]] = re.sub(
-                r" +", " ", data[i].text.strip().replace("\n", "")
-            )
-
-        assert "quest/action" in quest_data
-
-        quests.append(
-            quest_data["quest/action"]
-            .replace("Unlock:", "")
-            .replace("(miniquest)", "")
-            .strip()
-        )
-
-    return quests
+    with open("data/ironman-optimal-quest-guide.json", "r") as fh:
+        return json.load(fh)
 
 
 def sort_by_release_date(quest: Quest):
@@ -775,8 +659,9 @@ def print_quest_order_by_release_date(quests: list[Quest]) -> None:
 
     body += "\t\t// Quests\n"
     for quest in filter(
-        lambda q: q.quest_type
-        in (QuestType.FREE_TO_PLAY_QUEST, QuestType.MEMBERS_QUEST),
+        lambda q: (
+            q.quest_type in (QuestType.FREE_TO_PLAY_QUEST, QuestType.MEMBERS_QUEST)
+        ),
         sorted(quests, key=sort_by_release_date),
     ):
         quest_enums = quest.quest_helper_enum_values()
@@ -902,11 +787,14 @@ def main() -> None:
                 case "enum":
                     print_quest_order_by_release_date(quests)
                 case other:
-                    print(
+                    log.warning(
                         f"Unknown subcommand '{other}'. Available subcommands: {', '.join(SUBCOMMANDS)}"
                     )
 
         case "quests-by-optimal-order":
+            log.info(
+                "Outputting optimal quest order - see OptimalQuestGuide.java in Quest Helper",
+            )
             SUBCOMMANDS = [
                 "enum",
             ]
@@ -918,11 +806,14 @@ def main() -> None:
                 case "enum":
                     print_quests_enum_by_optimal_order(quests)
                 case other:
-                    print(
+                    log.warning(
                         f"Unknown subcommand '{other}'. Available subcommands: {', '.join(SUBCOMMANDS)}"
                     )
 
         case "ironman-quests-by-optimal-order":
+            log.info(
+                "Outputting optimal ironman quest order - see IronmanOptimalQuestGuide.java in Quest Helper",
+            )
             SUBCOMMANDS = [
                 "enum",
             ]
@@ -934,7 +825,7 @@ def main() -> None:
                 case "enum":
                     print_quests_enum_by_ironman_optimal_order(quests)
                 case other:
-                    print(
+                    log.warning(
                         f"Unknown subcommand '{other}'. Available subcommands: {', '.join(SUBCOMMANDS)}"
                     )
 
@@ -942,7 +833,7 @@ def main() -> None:
             print(json.dumps(quests, cls=DCJSONEncoder))
 
         case other:
-            print(
+            log.info(
                 f"Unknown command '{other}'. Available commands: {', '.join(COMMANDS)}"
             )
 

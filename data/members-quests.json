@@ -1,0 +1,1742 @@
+[
+    {
+        "number": 18,
+        "name": "Druidic Ritual",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 4,
+        "series": null,
+        "release_date": "2002-02-27"
+    },
+    {
+        "number": 19,
+        "name": "Lost City",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 3,
+        "series": null,
+        "release_date": "2002-02-27"
+    },
+    {
+        "number": 20,
+        "name": "Witch's House",
+        "difficulty": "Intermediate",
+        "length": "Very Short",
+        "quest_points": 4,
+        "series": null,
+        "release_date": "2002-02-27"
+    },
+    {
+        "number": 21,
+        "name": "Merlin's Crystal",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 6,
+        "series": {
+            "name": "Camelot",
+            "number": "1"
+        },
+        "release_date": "2002-02-27"
+    },
+    {
+        "number": 22,
+        "name": "Heroes' Quest",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2002-02-27"
+    },
+    {
+        "number": 23,
+        "name": "Scorpion Catcher",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2002-03-25"
+    },
+    {
+        "number": 24,
+        "name": "Family Crest",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2002-04-09"
+    },
+    {
+        "number": 26,
+        "name": "Fishing Contest",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2002-05-28"
+    },
+    {
+        "number": 25,
+        "name": "Tribal Totem",
+        "difficulty": "Intermediate",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2002-04-30"
+    },
+    {
+        "number": 27,
+        "name": "Monk's Friend",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2002-05-28"
+    },
+    {
+        "number": 28,
+        "name": "Temple of Ikov",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": {
+            "name": "Mahjarrat",
+            "number": "5"
+        },
+        "release_date": "2002-06-17"
+    },
+    {
+        "number": 29,
+        "name": "Clock Tower",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2002-06-17"
+    },
+    {
+        "number": 30,
+        "name": "Holy Grail",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 2,
+        "series": {
+            "name": "Camelot",
+            "number": "2"
+        },
+        "release_date": "2002-07-23"
+    },
+    {
+        "number": 31,
+        "name": "Tree Gnome Village",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 2,
+        "series": {
+            "name": "Gnome quest series"
+        },
+        "release_date": "2002-07-23"
+    },
+    {
+        "number": 32,
+        "name": "Fight Arena",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 2,
+        "series": {
+            "name": "Mahjarrat",
+            "number": "3"
+        },
+        "release_date": "2002-07-23"
+    },
+    {
+        "number": 33,
+        "name": "Hazeel Cult",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Mahjarrat",
+            "number": "2"
+        },
+        "release_date": "2002-08-15"
+    },
+    {
+        "number": 34,
+        "name": "Sheep Herder",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 4,
+        "series": null,
+        "release_date": "2002-08-15"
+    },
+    {
+        "number": 35,
+        "name": "Plague City",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Elf",
+            "number": "1"
+        },
+        "release_date": "2002-08-27"
+    },
+    {
+        "number": 36,
+        "name": "Sea Slug",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Temple Knight",
+            "number": "3"
+        },
+        "release_date": "2002-09-09"
+    },
+    {
+        "number": 37,
+        "name": "Waterfall Quest",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2002-09-24"
+    },
+    {
+        "number": 39,
+        "name": "Jungle Potion",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2002-10-23"
+    },
+    {
+        "number": 40,
+        "name": "The Grand Tree",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 5,
+        "series": {
+            "name": "Gnome",
+            "number": "1"
+        },
+        "release_date": "2002-12-12"
+    },
+    {
+        "number": 42,
+        "name": "Underground Pass",
+        "difficulty": "Experienced",
+        "length": "Long",
+        "quest_points": 5,
+        "series": {
+            "name": "Elf",
+            "number": "3"
+        },
+        "release_date": "2003-03-03"
+    },
+    {
+        "number": 43,
+        "name": "Observatory Quest",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2003-03-17"
+    },
+    {
+        "number": 44,
+        "name": "The Tourist Trap",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2003-04-14"
+    },
+    {
+        "number": 45,
+        "name": "Watchtower",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 4,
+        "series": null,
+        "release_date": "2003-05-07"
+    },
+    {
+        "number": 46,
+        "name": "Dwarf Cannon",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2003-05-27"
+    },
+    {
+        "number": 47,
+        "name": "Murder Mystery",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 3,
+        "series": null,
+        "release_date": "2003-06-09"
+    },
+    {
+        "number": 48,
+        "name": "The Dig Site",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Mahjarrat",
+            "number": "1"
+        },
+        "release_date": "2003-07-09"
+    },
+    {
+        "number": 49,
+        "name": "Gertrude's Cat",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2003-07-28"
+    },
+    {
+        "number": 50,
+        "name": "Legends' Quest",
+        "difficulty": "Master",
+        "length": "Long",
+        "quest_points": 4,
+        "series": null,
+        "release_date": "2003-08-20"
+    },
+    {
+        "number": 56,
+        "name": "Death Plateau",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Troll",
+            "number": "1"
+        },
+        "release_date": "2004-08-09"
+    },
+    {
+        "number": 60,
+        "name": "Eadgar's Ruse",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": {
+            "name": "Troll",
+            "number": "3"
+        },
+        "release_date": "2004-10-05"
+    },
+    {
+        "number": 52,
+        "name": "Big Chompy Bird Hunting",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2004-05-18"
+    },
+    {
+        "number": 53,
+        "name": "Elemental Workshop I",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Elemental Workshop",
+            "number": "1"
+        },
+        "release_date": "2004-06-02"
+    },
+    {
+        "number": 55,
+        "name": "Nature Spirit",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2004-07-13"
+    },
+    {
+        "number": 54,
+        "name": "Priest in Peril",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2004-06-29"
+    },
+    {
+        "number": 59,
+        "name": "Regicide",
+        "difficulty": "Experienced",
+        "length": "Long",
+        "quest_points": 3,
+        "series": {
+            "name": "Elf",
+            "number": "4"
+        },
+        "release_date": "2004-09-20"
+    },
+    {
+        "number": 58,
+        "name": "Tai Bwo Wannai Trio",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2004-09-14"
+    },
+    {
+        "number": 57,
+        "name": "Troll Stronghold",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Troll",
+            "number": "2"
+        },
+        "release_date": "2004-08-24"
+    },
+    {
+        "number": 61,
+        "name": "Shades of Mort'ton",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 3,
+        "series": null,
+        "release_date": "2004-10-18"
+    },
+    {
+        "number": 62,
+        "name": "The Fremennik Trials",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 3,
+        "series": {
+            "name": "Fremennik",
+            "number": "1"
+        },
+        "release_date": "2004-11-02"
+    },
+    {
+        "number": 63,
+        "name": "Horror from the Deep",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2004-11-17"
+    },
+    {
+        "number": 64,
+        "name": "Throne of Miscellania",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": {
+            "name": "Miscellania",
+            "number": "1"
+        },
+        "release_date": "2004-11-29"
+    },
+    {
+        "number": 65,
+        "name": "Monkey Madness I",
+        "difficulty": "Master",
+        "length": "Long",
+        "quest_points": 3,
+        "series": {
+            "name": "Gnome",
+            "number": "4"
+        },
+        "release_date": "2004-12-06"
+    },
+    {
+        "number": 66,
+        "name": "Haunted Mine",
+        "difficulty": "Experienced",
+        "length": "Short",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2004-12-21"
+    },
+    {
+        "number": 67,
+        "name": "Troll Romance",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2005-01-05"
+    },
+    {
+        "number": 68,
+        "name": "In Search of the Myreque",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 2,
+        "series": {
+            "name": "Myreque",
+            "number": "1"
+        },
+        "release_date": "2005-01-10"
+    },
+    {
+        "number": 69,
+        "name": "Creature of Fenkenstrain",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2005-01-31"
+    },
+    {
+        "number": 70,
+        "name": "Roving Elves",
+        "difficulty": "Experienced",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Elf",
+            "number": "5"
+        },
+        "release_date": "2005-02-07"
+    },
+    {
+        "number": 71,
+        "name": "Ghosts Ahoy",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2005-02-15"
+    },
+    {
+        "number": 72,
+        "name": "One Small Favour",
+        "difficulty": "Experienced",
+        "length": "Long",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2005-02-28"
+    },
+    {
+        "number": 73,
+        "name": "Mountain Daughter",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2005-03-07"
+    },
+    {
+        "number": 74,
+        "name": "Between a Rock...",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2005-03-21"
+    },
+    {
+        "number": 75,
+        "name": "The Feud",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2005-04-04"
+    },
+    {
+        "number": 76,
+        "name": "The Golem",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2005-04-11"
+    },
+    {
+        "number": 77,
+        "name": "Desert Treasure I",
+        "difficulty": "Master",
+        "length": "Long",
+        "quest_points": 3,
+        "series": {
+            "name": "Mahjarrat",
+            "number": "7"
+        },
+        "release_date": "2005-04-18"
+    },
+    {
+        "number": 78,
+        "name": "Icthlarin's Little Helper",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Kharidian",
+            "number": "2"
+        },
+        "release_date": "2005-04-26"
+    },
+    {
+        "number": 79,
+        "name": "Tears of Guthix",
+        "difficulty": "Intermediate",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2005-05-04"
+    },
+    {
+        "number": 81,
+        "name": "The Lost Tribe",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Dorgeshuun",
+            "number": "1"
+        },
+        "release_date": "2005-05-31"
+    },
+    {
+        "number": 82,
+        "name": "The Giant Dwarf",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Red Axe",
+            "number": "1"
+        },
+        "release_date": "2005-05-31"
+    },
+    {
+        "number": 83,
+        "name": "Recruitment Drive",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Temple Knight",
+            "number": "1"
+        },
+        "release_date": "2005-06-27"
+    },
+    {
+        "number": 84,
+        "name": "Mourning's End Part I",
+        "difficulty": "Master",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Elf",
+            "number": "6"
+        },
+        "release_date": "2005-07-19"
+    },
+    {
+        "number": 85,
+        "name": "Forgettable Tale...",
+        "difficulty": "Intermediate",
+        "length": "Long",
+        "quest_points": 2,
+        "series": {
+            "name": "Red Axe",
+            "number": "2"
+        },
+        "release_date": "2005-07-26"
+    },
+    {
+        "number": 86,
+        "name": "Garden of Tranquillity",
+        "difficulty": "Intermediate",
+        "length": "Long",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2005-08-30"
+    },
+    {
+        "number": 87,
+        "name": "A Tail of Two Cats",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Dragonkin",
+            "number": "2"
+        },
+        "release_date": "2005-09-26"
+    },
+    {
+        "number": 88,
+        "name": "Wanted!",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": {
+            "name": "Temple Knight",
+            "number": "2"
+        },
+        "release_date": "2005-10-17"
+    },
+    {
+        "number": 89,
+        "name": "Mourning's End Part II",
+        "difficulty": "Master",
+        "length": "Long",
+        "quest_points": 2,
+        "series": {
+            "name": "Elf",
+            "number": "7"
+        },
+        "release_date": "2005-10-17"
+    },
+    {
+        "number": 90,
+        "name": "Rum Deal",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Pirate",
+            "number": "1"
+        },
+        "release_date": "2005-10-31"
+    },
+    {
+        "number": 91,
+        "name": "Shadow of the Storm",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": {
+            "name": "Demon Slayer",
+            "number": "2"
+        },
+        "release_date": "2005-11-14"
+    },
+    {
+        "number": 92,
+        "name": "Making History",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 3,
+        "series": null,
+        "release_date": "2005-11-22"
+    },
+    {
+        "number": 93,
+        "name": "Ratcatchers",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2005-11-28"
+    },
+    {
+        "number": 94,
+        "name": "Spirits of the Elid",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2005-12-05"
+    },
+    {
+        "number": 95,
+        "name": "Devious Minds",
+        "difficulty": "Experienced",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Mahjarrat",
+            "number": "11"
+        },
+        "release_date": "2005-12-19"
+    },
+    {
+        "number": 96,
+        "name": "The Hand in the Sand",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2006-01-10"
+    },
+    {
+        "number": 97,
+        "name": "Enakhra's Lament",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Mahjarrat",
+            "number": "4"
+        },
+        "release_date": "2006-01-23"
+    },
+    {
+        "number": 98,
+        "name": "Cabin Fever",
+        "difficulty": "Experienced",
+        "length": "Short",
+        "quest_points": 2,
+        "series": {
+            "name": "Pirate",
+            "number": "2"
+        },
+        "release_date": "2006-02-07"
+    },
+    {
+        "number": 99,
+        "name": "Fairytale I - Growing Pains",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Fairytale",
+            "number": "1"
+        },
+        "release_date": "2006-02-27"
+    },
+    {
+        "number": 100,
+        "name": "Recipe for Disaster",
+        "difficulty": "Special",
+        "length": "Very Long",
+        "quest_points": 10,
+        "series": null,
+        "release_date": "2006-03-15"
+    },
+    {
+        "number": 101,
+        "name": "In Aid of the Myreque",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Myreque",
+            "number": "2"
+        },
+        "release_date": "2006-03-22"
+    },
+    {
+        "number": 102,
+        "name": "A Soul's Bane",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2006-04-03"
+    },
+    {
+        "number": 103,
+        "name": "Rag and Bone Man I",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Rag and Bone Man",
+            "number": "1"
+        },
+        "release_date": "2006-04-10"
+    },
+    {
+        "number": 104,
+        "name": "Swan Song",
+        "difficulty": "Master",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2006-05-02"
+    },
+    {
+        "number": 105,
+        "name": "Royal Trouble",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": {
+            "name": "Miscellania",
+            "number": "2"
+        },
+        "release_date": "2006-05-22"
+    },
+    {
+        "number": 106,
+        "name": "Death to the Dorgeshuun",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": {
+            "name": "Dorgeshuun",
+            "number": "2"
+        },
+        "release_date": "2006-06-21"
+    },
+    {
+        "number": 107,
+        "name": "Fairytale II - Cure a Queen",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Fairytale",
+            "number": "2"
+        },
+        "release_date": "2006-07-11"
+    },
+    {
+        "number": 108,
+        "name": "Lunar Diplomacy",
+        "difficulty": "Experienced",
+        "length": "Long",
+        "quest_points": 2,
+        "series": {
+            "name": "Fremennik",
+            "number": "3"
+        },
+        "release_date": "2006-07-24"
+    },
+    {
+        "number": 109,
+        "name": "The Eyes of Glouphrie",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Gnome",
+            "number": "2"
+        },
+        "release_date": "2006-08-15"
+    },
+    {
+        "number": 110,
+        "name": "Darkness of Hallowvale",
+        "difficulty": "Experienced",
+        "length": "Long",
+        "quest_points": 2,
+        "series": {
+            "name": "Myreque",
+            "number": "3"
+        },
+        "release_date": "2006-09-04"
+    },
+    {
+        "number": 111,
+        "name": "The Slug Menace",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": {
+            "name": "Temple Knight",
+            "number": "4"
+        },
+        "release_date": "2006-09-20"
+    },
+    {
+        "number": 112,
+        "name": "Elemental Workshop II",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Elemental Workshop",
+            "number": "2"
+        },
+        "release_date": "2006-10-02"
+    },
+    {
+        "number": 113,
+        "name": "My Arm's Big Adventure",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": {
+            "name": "Troll",
+            "number": "4"
+        },
+        "release_date": "2006-10-23"
+    },
+    {
+        "number": 114,
+        "name": "Enlightened Journey",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2006-11-06"
+    },
+    {
+        "number": 115,
+        "name": "Eagles' Peak",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2006-11-28"
+    },
+    {
+        "number": 116,
+        "name": "Animal Magnetism",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2006-12-12"
+    },
+    {
+        "number": 117,
+        "name": "Contact!",
+        "difficulty": "Experienced",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Kharidian",
+            "number": "3"
+        },
+        "release_date": "2007-01-10"
+    },
+    {
+        "number": 118,
+        "name": "Cold War",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": {
+            "name": "Penguin",
+            "number": "1"
+        },
+        "release_date": "2007-01-29"
+    },
+    {
+        "number": 119,
+        "name": "The Fremennik Isles",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": {
+            "name": "Fremennik",
+            "number": "2"
+        },
+        "release_date": "2007-02-06"
+    },
+    {
+        "number": 121,
+        "name": "The Great Brain Robbery",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Pirate",
+            "number": "3"
+        },
+        "release_date": "2007-03-06"
+    },
+    {
+        "number": 122,
+        "name": "What Lies Below",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2007-03-27"
+    },
+    {
+        "number": 123,
+        "name": "Olaf's Quest",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2007-04-10"
+    },
+    {
+        "number": 124,
+        "name": "Another Slice of H.A.M.",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Dorgeshuun",
+            "number": "3"
+        },
+        "release_date": "2007-04-24"
+    },
+    {
+        "number": 125,
+        "name": "Dream Mentor",
+        "difficulty": "Master",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2007-05-15"
+    },
+    {
+        "number": 126,
+        "name": "Grim Tales",
+        "difficulty": "Master",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2007-06-04"
+    },
+    {
+        "number": 127,
+        "name": "King's Ransom",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": {
+            "name": "Camelot",
+            "number": "3"
+        },
+        "release_date": "2007-07-24"
+    },
+    {
+        "number": 41,
+        "name": "Shilo Village",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2003-01-27"
+    },
+    {
+        "number": 38,
+        "name": "Biohazard",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 3,
+        "series": {
+            "name": "Elf",
+            "number": "2"
+        },
+        "release_date": "2002-10-23"
+    },
+    {
+        "number": 120,
+        "name": "Tower of Life",
+        "difficulty": "Novice",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2007-02-19"
+    },
+    {
+        "number": 131,
+        "name": "Rag and Bone Man II",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": {
+            "name": "Rag and Bone Man",
+            "number": "2"
+        },
+        "release_date": "2006-04-10"
+    },
+    {
+        "number": 151,
+        "name": "Land of the Goblins",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Dorgeshuun",
+            "number": "4"
+        },
+        "release_date": "2022-02-09"
+    },
+    {
+        "number": 165,
+        "name": "While Guthix Sleeps",
+        "difficulty": "Grandmaster",
+        "length": "Very Long",
+        "quest_points": 5,
+        "series": {
+            "name": "Mahjarrat",
+            "number": "15"
+        },
+        "release_date": "2024-07-10"
+    },
+    {
+        "number": 80,
+        "name": "Zogre Flesh Eaters",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2005-05-17"
+    },
+    {
+        "number": 128,
+        "name": "Monkey Madness II",
+        "difficulty": "Grandmaster",
+        "length": "Very Long",
+        "quest_points": 4,
+        "series": {
+            "name": "Gnome",
+            "number": "5"
+        },
+        "release_date": "2016-05-06"
+    },
+    {
+        "number": 130,
+        "name": "Client of Kourend",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Great Kourend",
+            "number": "2"
+        },
+        "release_date": "2017-04-20"
+    },
+    {
+        "number": 133,
+        "name": "The Queen of Thieves",
+        "difficulty": "Intermediate",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Great Kourend",
+            "number": "3A"
+        },
+        "release_date": "2017-11-09"
+    },
+    {
+        "number": 132,
+        "name": "Bone Voyage",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2017-09-07"
+    },
+    {
+        "number": 136,
+        "name": "Dragon Slayer II",
+        "difficulty": "Grandmaster",
+        "length": "Very Long",
+        "quest_points": 5,
+        "series": {
+            "name": "Dragonkin",
+            "number": "3"
+        },
+        "release_date": "2018-01-04"
+    },
+    {
+        "number": 134,
+        "name": "The Depths of Despair",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Great Kourend",
+            "number": "3B"
+        },
+        "release_date": "2017-11-09"
+    },
+    {
+        "number": "100.1",
+        "name": "Recipe for Disaster/Another Cook's Quest",
+        "difficulty": "Special",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2006-03-15"
+    },
+    {
+        "number": "100.3",
+        "name": "Recipe for Disaster/Freeing the Goblin generals",
+        "difficulty": "Special",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2006-03-15"
+    },
+    {
+        "number": "100.2",
+        "name": "Recipe for Disaster/Freeing the Mountain Dwarf",
+        "difficulty": "Special",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2006-03-15"
+    },
+    {
+        "number": "100.6",
+        "name": "Recipe for Disaster/Freeing Evil Dave",
+        "difficulty": "Special",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2006-03-15"
+    },
+    {
+        "number": "100.4",
+        "name": "Recipe for Disaster/Freeing Pirate Pete",
+        "difficulty": "Special",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2006-03-15"
+    },
+    {
+        "number": "100.5",
+        "name": "Recipe for Disaster/Freeing the Lumbridge Guide",
+        "difficulty": "Special",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2006-03-15"
+    },
+    {
+        "number": "100.8",
+        "name": "Recipe for Disaster/Freeing Sir Amik Varze",
+        "difficulty": "Special",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2006-03-15"
+    },
+    {
+        "number": "100.7",
+        "name": "Recipe for Disaster/Freeing King Awowogei",
+        "difficulty": "Special",
+        "length": "Long",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2006-03-15"
+    },
+    {
+        "number": "100.9",
+        "name": "Recipe for Disaster/Freeing Skrach Uglogwee",
+        "difficulty": "Special",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2006-03-15"
+    },
+    {
+        "number": 138,
+        "name": "A Taste of Hope",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": {
+            "name": "Myreque",
+            "number": "4"
+        },
+        "release_date": "2018-05-24"
+    },
+    {
+        "number": 137,
+        "name": "Tale of the Righteous",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Great Kourend",
+            "number": "3E"
+        },
+        "release_date": "2018-04-19"
+    },
+    {
+        "number": 139,
+        "name": "Making Friends with My Arm",
+        "difficulty": "Master",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Troll",
+            "number": "5"
+        },
+        "release_date": "2018-09-06"
+    },
+    {
+        "number": "100.10",
+        "name": "Recipe for Disaster/Defeating the Culinaromancer",
+        "difficulty": "Special",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2006-03-15"
+    },
+    {
+        "number": 143,
+        "name": "Song of the Elves",
+        "difficulty": "Grandmaster",
+        "length": "Very Long",
+        "quest_points": 4,
+        "series": {
+            "name": "Elf",
+            "number": "8"
+        },
+        "release_date": "2019-07-25"
+    },
+    {
+        "number": 141,
+        "name": "The Ascent of Arceuus",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Great Kourend",
+            "number": "3C"
+        },
+        "release_date": "2019-01-10"
+    },
+    {
+        "number": 140,
+        "name": "The Forsaken Tower",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Great Kourend",
+            "number": "3D"
+        },
+        "release_date": "2019-01-10"
+    },
+    {
+        "number": 144,
+        "name": "The Fremennik Exiles",
+        "difficulty": "Master",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Fremennik",
+            "number": "4"
+        },
+        "release_date": "2019-09-26"
+    },
+    {
+        "number": 170,
+        "name": "The Curse of Arrav",
+        "difficulty": "Master",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Mahjarrat",
+            "number": "10"
+        },
+        "release_date": "2024-11-06"
+    },
+    {
+        "number": 160,
+        "name": "Defender of Varrock",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Mahjarrat",
+            "number": "6"
+        },
+        "release_date": "2024-02-21"
+    },
+    {
+        "number": 145,
+        "name": "Sins of the Father",
+        "difficulty": "Master",
+        "length": "Long",
+        "quest_points": 2,
+        "series": {
+            "name": "Myreque",
+            "number": "5"
+        },
+        "release_date": "2020-06-04"
+    },
+    {
+        "number": 150,
+        "name": "A Kingdom Divided",
+        "difficulty": "Experienced",
+        "length": "Long",
+        "quest_points": 2,
+        "series": {
+            "name": "Great Kourend",
+            "number": "4"
+        },
+        "release_date": "2021-06-16"
+    },
+    {
+        "number": 146,
+        "name": "A Porcine of Interest",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2020-09-10"
+    },
+    {
+        "number": 147,
+        "name": "Getting Ahead",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Twisted Tales"
+        },
+        "release_date": "2020-11-25"
+    },
+    {
+        "number": 149,
+        "name": "A Night at the Theatre",
+        "difficulty": "Master",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2021-06-03"
+    },
+    {
+        "number": 153,
+        "name": "Beneath Cursed Sands",
+        "difficulty": "Master",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Kharidian",
+            "number": "4"
+        },
+        "release_date": "2022-04-27"
+    },
+    {
+        "number": 152,
+        "name": "Temple of the Eye",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Order of Wizards",
+            "number": "3"
+        },
+        "release_date": "2022-03-23"
+    },
+    {
+        "number": 158,
+        "name": "The Path of Glouphrie",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Gnome",
+            "number": "3"
+        },
+        "release_date": "2023-09-13"
+    },
+    {
+        "number": 154,
+        "name": "Sleeping Giants",
+        "difficulty": "Intermediate",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2022-06-08"
+    },
+    {
+        "number": 155,
+        "name": "The Garden of Death",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Twisted Tales"
+        },
+        "release_date": "2022-11-30"
+    },
+    {
+        "number": 157,
+        "name": "Desert Treasure II - The Fallen Empire",
+        "difficulty": "Grandmaster",
+        "length": "Very Long",
+        "quest_points": 5,
+        "series": {
+            "name": "Mahjarrat",
+            "number": "14"
+        },
+        "release_date": "2023-07-26"
+    },
+    {
+        "number": 156,
+        "name": "Secrets of the North",
+        "difficulty": "Master",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Mahjarrat",
+            "number": "13"
+        },
+        "release_date": "2023-01-11"
+    },
+    {
+        "number": 159,
+        "name": "Children of the Sun",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Twilight Emissaries",
+            "number": "1"
+        },
+        "release_date": "2024-01-10"
+    },
+    {
+        "number": 163,
+        "name": "Perilous Moons",
+        "difficulty": "Master",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2024-03-20"
+    },
+    {
+        "number": 164,
+        "name": "The Ribbiting Tale of a Lily Pad Labour Dispute",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2024-03-20"
+    },
+    {
+        "number": 161,
+        "name": "Twilight's Promise",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": {
+            "name": "Twilight Emissaries",
+            "number": "2"
+        },
+        "release_date": "2024-03-20"
+    },
+    {
+        "number": 162,
+        "name": "At First Light",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2024-03-20"
+    },
+    {
+        "number": 166,
+        "name": "The Heart of Darkness",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Twilight Emissaries",
+            "number": "3"
+        },
+        "release_date": "2024-09-25"
+    },
+    {
+        "number": 167,
+        "name": "Death on the Isle",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2024-09-25"
+    },
+    {
+        "number": 168,
+        "name": "Meat and Greet",
+        "difficulty": "Experienced",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2024-09-25"
+    },
+    {
+        "number": 169,
+        "name": "Ethically Acquired Antiquities",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2024-09-25"
+    },
+    {
+        "number": 171,
+        "name": "The Final Dawn",
+        "difficulty": "Master",
+        "length": "Long",
+        "quest_points": 3,
+        "series": {
+            "name": "Twilight Emissaries",
+            "number": "4"
+        },
+        "release_date": "2025-07-23"
+    },
+    {
+        "number": 174,
+        "name": "Pandemonium",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2025-11-19"
+    },
+    {
+        "number": 175,
+        "name": "Prying Times",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2025-11-19"
+    },
+    {
+        "number": 176,
+        "name": "Current Affairs",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2025-11-19"
+    },
+    {
+        "number": 177,
+        "name": "Troubled Tortugans",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 1,
+        "series": {
+            "name": "Tortugan",
+            "number": "1"
+        },
+        "release_date": "2025-11-19"
+    },
+    {
+        "number": 172,
+        "name": "Shadows of Custodia",
+        "difficulty": "Experienced",
+        "length": "Short",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2025-07-23"
+    },
+    {
+        "number": 173,
+        "name": "Scrambled!",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2025-07-23"
+    }
+]

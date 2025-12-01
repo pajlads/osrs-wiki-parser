@@ -1,0 +1,190 @@
+[
+    {
+        "number": null,
+        "name": "Alfred Grimhand's Barcrawl",
+        "difficulty": "Novice",
+        "length": "Medium",
+        "quest_points": 0,
+        "series": null,
+        "release_date": "2002-03-25"
+    },
+    {
+        "number": null,
+        "name": "Enter the Abyss",
+        "difficulty": "Intermediate",
+        "length": "Very Short",
+        "quest_points": 0,
+        "series": {
+            "name": "Order of Wizards",
+            "number": "2"
+        },
+        "release_date": "2005-06-13"
+    },
+    {
+        "number": null,
+        "name": "The General's Shadow",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 0,
+        "series": {
+            "name": "Mahjarrat",
+            "number": "9"
+        },
+        "release_date": "2007-02-12"
+    },
+    {
+        "number": null,
+        "name": "Barbarian Training",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 0,
+        "series": null,
+        "release_date": "2007-07-03"
+    },
+    {
+        "number": null,
+        "name": "Skippy and the Mogres",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 0,
+        "series": null,
+        "release_date": "2005-10-24"
+    },
+    {
+        "number": null,
+        "name": "Curse of the Empty Lord",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 0,
+        "series": {
+            "name": "Mahjarrat",
+            "number": "8"
+        },
+        "release_date": "2005-07-26"
+    },
+    {
+        "number": null,
+        "name": "Lair of Tarn Razorlor",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 0,
+        "series": null,
+        "release_date": "2007-01-22"
+    },
+    {
+        "number": null,
+        "name": "Bear Your Soul",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 0,
+        "series": {
+            "name": "Great Kourend"
+        },
+        "release_date": "2016-05-19"
+    },
+    {
+        "number": null,
+        "name": "The Enchanted Key",
+        "difficulty": "Intermediate",
+        "length": "Medium",
+        "quest_points": 0,
+        "series": null,
+        "release_date": "2005-11-22"
+    },
+    {
+        "number": null,
+        "name": "Mage Arena I",
+        "difficulty": "Experienced",
+        "length": "Short",
+        "quest_points": 0,
+        "series": null,
+        "release_date": "2003-09-22"
+    },
+    {
+        "number": null,
+        "name": "Family Pest",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 0,
+        "series": null,
+        "release_date": "2016-09-01"
+    },
+    {
+        "number": null,
+        "name": "Mage Arena II",
+        "difficulty": "Master",
+        "length": "Medium",
+        "quest_points": 0,
+        "series": null,
+        "release_date": "2017-11-23"
+    },
+    {
+        "number": null,
+        "name": "In Search of Knowledge",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 0,
+        "series": null,
+        "release_date": "2019-07-04"
+    },
+    {
+        "number": null,
+        "name": "Daddy's Home",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 0,
+        "series": null,
+        "release_date": "2020-08-26"
+    },
+    {
+        "number": null,
+        "name": "The Frozen Door",
+        "difficulty": "Master",
+        "length": "Short",
+        "quest_points": 0,
+        "series": null,
+        "release_date": "2021-12-16"
+    },
+    {
+        "number": null,
+        "name": "Hopespear's Will",
+        "difficulty": "Master",
+        "length": "Short",
+        "quest_points": 0,
+        "series": null,
+        "release_date": "2022-02-09"
+    },
+    {
+        "number": null,
+        "name": "Into the Tombs",
+        "difficulty": "Master",
+        "length": "Medium",
+        "quest_points": 0,
+        "series": {
+            "name": "Kharidian",
+            "number": "5"
+        },
+        "release_date": "2022-08-24"
+    },
+    {
+        "number": null,
+        "name": "His Faithful Servants",
+        "difficulty": "Experienced",
+        "length": "Very Short",
+        "quest_points": 0,
+        "series": {
+            "name": "Mahjarrat",
+            "number": "12"
+        },
+        "release_date": "2023-06-14"
+    },
+    {
+        "number": null,
+        "name": "Vale Totems",
+        "difficulty": "Novice",
+        "length": "Very Short",
+        "quest_points": 0,
+        "series": null,
+        "release_date": "2025-07-23"
+    }
+]
