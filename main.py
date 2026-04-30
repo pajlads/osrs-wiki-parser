@@ -3,13 +3,12 @@
 # the idea is for this to be expanded to other quest orders
 
 import datetime
-from enum import Enum
-from operator import attrgetter
-import sys
-from dataclasses import dataclass, asdict, is_dataclass
-from typing import Optional
 import json
 import logging
+import sys
+from dataclasses import asdict, dataclass, is_dataclass
+from enum import Enum
+from operator import attrgetter
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -93,10 +92,10 @@ class Quest:
     quest_type: QuestType
 
     # e.g. 100
-    number: Optional[int]
+    number: int | None
 
     # e.g. 1 for RFD subquests
-    subnumber: Optional[int]
+    subnumber: int | None
 
     # e.g. "Cook's Assistant"
     name: str
@@ -110,7 +109,7 @@ class Quest:
     quest_points: int
 
     # e.g. "Demon Slayer"
-    series: Optional[str]
+    series: str | None
 
     release_date: datetime.datetime
 
@@ -133,7 +132,7 @@ class Quest:
         self,
         optimal_quest_order: list[str],
         ironman_optimal_quest_order: list[str],
-        custom_name: Optional[str] = None,
+        custom_name: str | None = None,
     ):
         name = custom_name or self.name
 
@@ -441,7 +440,7 @@ def load_quests(
 ) -> list[Quest]:
     quests: list[Quest] = []
 
-    with open(path, "r") as fh:
+    with open(path) as fh:
         payload = json.loads(fh.read())
         for p in payload:
             number = p["number"]
@@ -636,12 +635,12 @@ def load_quest_list(
 
 
 def load_optimal_quest_order() -> list[str]:
-    with open("data/optimal-quest-guide.json", "r") as fh:
+    with open("data/optimal-quest-guide.json") as fh:
         return json.load(fh)
 
 
 def load_ironman_optimal_quest_order() -> list[str]:
-    with open("data/ironman-optimal-quest-guide.json", "r") as fh:
+    with open("data/ironman-optimal-quest-guide.json") as fh:
         return json.load(fh)
 
 

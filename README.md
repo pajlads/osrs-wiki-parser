@@ -33,3 +33,7 @@ uv run main.py quests-by-release-date
 ```python3
 uv run main.py quests
 ```
+
+## dev
+
+lint with `uv run ruff check` and `uv run ty check`

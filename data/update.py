@@ -1,10 +1,12 @@
 from __future__ import annotations
-from dataclasses import dataclass
-import requests
-from bs4 import BeautifulSoup, Tag
+
 import json
 import re
+from dataclasses import dataclass
 from datetime import datetime
+
+import requests
+from bs4 import BeautifulSoup, Tag
 
 
 @dataclass
