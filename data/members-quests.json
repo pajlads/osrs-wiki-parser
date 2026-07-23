@@ -1671,6 +1671,18 @@
         "release_date": "2024-09-25"
     },
     {
+        "number": 180,
+        "name": "The Blood Moon Rises",
+        "difficulty": "Grandmaster",
+        "length": "Very Long",
+        "quest_points": 4,
+        "series": {
+            "name": "Myreque",
+            "number": "6"
+        },
+        "release_date": "2026-06-30"
+    },
+    {
         "number": 171,
         "name": "The Final Dawn",
         "difficulty": "Master",
@@ -1722,6 +1734,18 @@
         "release_date": "2025-11-19"
     },
     {
+        "number": 179,
+        "name": "The Red Reef",
+        "difficulty": "Experienced",
+        "length": "Medium",
+        "quest_points": 2,
+        "series": {
+            "name": "Tortugan",
+            "number": "2"
+        },
+        "release_date": "2026-05-20"
+    },
+    {
         "number": 172,
         "name": "Shadows of Custodia",
         "difficulty": "Experienced",
@@ -1738,5 +1762,32 @@
         "quest_points": 1,
         "series": null,
         "release_date": "2025-07-23"
+    },
+    {
+        "number": 181,
+        "name": "Fallen From Grace",
+        "difficulty": "Experienced",
+        "length": "Short",
+        "quest_points": 2,
+        "series": null,
+        "release_date": "2026-07-29"
+    },
+    {
+        "number": 182,
+        "name": "A Ruff Situation",
+        "difficulty": "Novice",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2026-09-08"
+    },
+    {
+        "number": 183,
+        "name": "Crab Quest",
+        "difficulty": "Intermediate",
+        "length": "Short",
+        "quest_points": 1,
+        "series": null,
+        "release_date": "2026-09-08"
     }
 ]

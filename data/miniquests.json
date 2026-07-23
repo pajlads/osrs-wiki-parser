@@ -186,5 +186,14 @@
         "quest_points": 0,
         "series": null,
         "release_date": "2025-07-23"
+    },
+    {
+        "number": null,
+        "name": "The Fractured Archive",
+        "difficulty": "Grandmaster",
+        "length": "Medium",
+        "quest_points": 0,
+        "series": null,
+        "release_date": "2026-10-20"
     }
 ]
